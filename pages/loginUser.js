@@ -86,13 +86,14 @@ import Link from "next/link";
                         type="text"
                         label="Email"
                         placeholder="johndoe@gmail.com"
-                        required
+                        
                         sx={{
                           width: { lg: "50%", md: "50%", sm: "50%", xs: "80%" },
                           marginTop: "12px",
                         }}
                         {...register("email")}
                         helperText={errors.email?.message}
+                        FormHelperTextProps={{ sx: { color: 'red' } }}
                       />
                     </Box>
                     <Box>
@@ -100,7 +101,7 @@ import Link from "next/link";
                         type="password"
                         label="password"
                         placeholder="password..."
-                        required
+                        
                         sx={{
                           width: { lg: "50%", md: "50%", sm: "50%", xs: "80%" },
                           marginBottom: "10px",
@@ -108,6 +109,7 @@ import Link from "next/link";
                         }}
                         {...register("password")}
                         helperText={errors.password?.message}
+                        FormHelperTextProps={{ sx: { color: 'red' } }}
                       />
                     </Box>
                     <Button
@@ -128,34 +130,7 @@ import Link from "next/link";
                     <Link className="text-violet-700 text-base" href="/registerUser"> here</Link>
                   </p>
   
-                  <Divider
-                    component="span"
-                    role="presentation"
-                    className="Divider"
-                  >
-                    <p >or</p>
-                  </Divider >
-  
-                  <Box
-                    container
-                    sx={{
-                      display: "flex",
-                      gap: "5px",
-                      justifyContent: { xs: "center", sm: "center" },
-                      width: "100vw",
-                      marginLeft: "-5%",
-                      marginTop:"5px"
-                    }}
-                  >
-                    <Button variant="outlined" id="button" startIcon={<GoogleIcon />}>
-                      {" "}
-                      Google
-                    </Button>
-                    <Button variant="outlined" id="button" startIcon={<FacebookIcon />}>
-                      {" "}
-                      facebook
-                    </Button>
-                  </Box>
+               
                 </Grid>
               </Grid>
             </div>
@@ -208,6 +183,7 @@ import Link from "next/link";
                     }}
                     {...register("email")}
                     helperText={errors?.email?.message}
+                    FormHelperTextProps={{ sx: { color: 'red' } }}
                   />
                 </Box>
                 <Box>
@@ -223,6 +199,7 @@ import Link from "next/link";
                     }}
                     {...register("password")}
                     helperText={errors?.password?.message}
+                    FormHelperTextProps={{ sx: { color: 'red' } }}
                   />
                 </Box>
                 <Button
@@ -243,14 +220,7 @@ import Link from "next/link";
                 <Link className="text-violet-700 text-base" href="/registerUser"> here</Link>
               </p>
   
-              <Divider component="span" role="presentation" className="Divider" >
-                <Typography className="text-violet-700 ">or</Typography>
-              </Divider>
-  
-              <Box style={{marginTop:"10px"}}>
-                <Button variant="outlined" style={{marginRight:"9px"}} id="button">Google</Button>
-                <Button variant="outlined" id="button"> facebook</Button>
-              </Box>
+      
             </Grid>
           </Grid>
         )}

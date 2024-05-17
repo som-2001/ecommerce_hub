@@ -16,7 +16,7 @@ export default function ShowCard({title,image}) {
           <Typography component="div" variant="p" className='text-2xl w-40'>
             {title}
           </Typography>
-          <Link variant="subtitle1" className='button bg-purple-700 p-2 text-white cursor-pointer rounded-3xl relative top-[44%]' component="div"  
+          <Link variant="subtitle1" id="button" className=' bg-purple-700 p-2 text-white cursor-pointer rounded-3xl relative top-[44%]' component="div"  
           href={`/category/${title}`} onClick={(e)=>{localStorage.setItem('title',title)}} >
             View all
           </Link>

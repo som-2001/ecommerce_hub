@@ -87,9 +87,9 @@ import Link from "next/link";
                       <Grid item xs={12} sm={3} md={3} lg={3}>
                         <TextField
                           type="text"
-                          label="first name"
+                          label="first name *"
                           placeholder="john"
-                          required
+                          
                           sx={{
                             width: {
                               md: "100%",
@@ -100,14 +100,15 @@ import Link from "next/link";
                           }}
                           {...register("firstname")}
                           helperText={errors.firstname?.message}
+                          FormHelperTextProps={{ sx: { color: 'red' } }}
                         />
                       </Grid>
                       <Grid item xs={12} sm={3} md={3} lg={3}>
                         <TextField
                           type="text"
-                          label="last name"
+                          label="last name *"
                           placeholder="doe"
-                          required
+                          
                           sx={{
                             width: {
                               md: "100%",
@@ -118,29 +119,31 @@ import Link from "next/link";
                           }}
                           {...register("lastname")}
                           helperText={errors.lastname?.message}
+                          FormHelperTextProps={{ sx: { color: 'red' } }}
                         />
                       </Grid>
                     </Grid>
                     <Box>
                       <TextField
                         type="text"
-                        label="Email"
+                        label="Email *"
                         placeholder="johndoe@gmail.com"
-                        required
+                        
                         sx={{
                           width: { lg: "50%", md: "50%", sm: "50%", xs: "80%" },
                           marginTop: "12px",
                         }}
                         {...register("email")}
                         helperText={errors.email?.message}
+                        FormHelperTextProps={{ sx: { color: 'red' } }}
                       />
                     </Box>
                     <Box>
                       <TextField
                         type="password"
-                        label="password"
+                        label="password *"
                         placeholder="password..."
-                        required
+                        
                         sx={{
                           width: { lg: "50%", md: "50%", sm: "50%", xs: "80%" },
                           marginBottom: "10px",
@@ -148,6 +151,7 @@ import Link from "next/link";
                         }}
                         {...register("password")}
                         helperText={errors.password?.message}
+                        FormHelperTextProps={{ sx: { color: 'red' } }}
                       />
                     </Box>
                     <Button
@@ -168,33 +172,7 @@ import Link from "next/link";
                     <Link style={{ color: "violet" }} href="/loginUser"> Login</Link>
                   </p>
   
-                  <Divider
-                    component="span"
-                    role="presentation"
-                    className="Divider"
-                  >
-                    <Typography>or</Typography>
-                  </Divider>
-  
-                  <Box
-                    container
-                    sx={{
-                      display: "flex",
-                      gap: "5px",
-                      justifyContent: { xs: "center", sm: "center" },
-                      width: "100vw",
-                      marginLeft: "-5%",
-                    }}
-                  >
-                    <Button variant="outlined" id="button" startIcon={<GoogleIcon />}>
-                      {" "}
-                      Google
-                    </Button>
-                    <Button variant="outlined" id="button" startIcon={<FacebookIcon />}>
-                      {" "}
-                      facebook
-                    </Button>
-                  </Box>
+                
                 </Grid>
               </Grid>
             </div>
@@ -254,6 +232,7 @@ import Link from "next/link";
                       }}
                       {...register("firstname")}
                       helperText={errors?.firstname?.message}
+                      FormHelperTextProps={{ sx: { color: 'red' } }}
                     />
                   </Grid>
                   <Grid item xs={12} sm={12} md={3} lg={3}>
@@ -267,6 +246,7 @@ import Link from "next/link";
                       }}
                       {...register("lastname")}
                       helperText={errors?.lastname?.message}
+                      FormHelperTextProps={{ sx: { color: 'red' } }}
                     />
                   </Grid>
                 </Grid>
@@ -282,6 +262,7 @@ import Link from "next/link";
                     }}
                     {...register("email")}
                     helperText={errors?.email?.message}
+                    FormHelperTextProps={{ sx: { color: 'red' } }}
                   />
                 </Box>
                 <Box>
@@ -297,6 +278,7 @@ import Link from "next/link";
                     }}
                     {...register("password")}
                     helperText={errors?.password?.message}
+                    FormHelperTextProps={{ sx: { color: 'red' } }}
                   />
                 </Box>
                 <Button
@@ -318,14 +300,7 @@ import Link from "next/link";
                 <Link className="text-violet-700" href="/loginUser"> Login</Link>
               </p>
   
-              <Divider component="span" role="presentation" className="Divider" >
-                <Typography className="text-violet-700">or</Typography>
-              </Divider>
-  
-              <Box className="mt-6">
-                <Button variant="outlined" id="button" style={{marginRight:"5px"}}>Google</Button>
-                <Button variant="outlined" id="button" > facebook</Button>
-              </Box>
+            
             </Grid>
           </Grid>
         )}

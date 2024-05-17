@@ -1,4 +1,4 @@
-import { Card, CardContent, Grid, Typography } from "@mui/material";
+import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { MainCard } from "./MainCard";
@@ -23,6 +23,9 @@ export const DealsOfDay = () => {
         spacing={2}
         textAlign="-webkit-center"
       >
+        {result.length===0 && <Box className="flex flex-col m-auto">
+        <img src="../images/api_error.png" alt="" className="w-fit h-auto"/>
+        <p className=" text-2xl text-purple-700">Api error. Please try after some time.</p></Box>}
         {result &&
           result?.slice(0, 6)?.map((data, index) => (
             <Grid item xs={12} sm={6} md={6} lg={4}>

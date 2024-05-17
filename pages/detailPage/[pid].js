@@ -22,6 +22,8 @@ import { productDetailDesc, productDetailWithLimit } from "@/api/functions/Produ
 import { useQuery } from "react-query";
 import FAQ from "@/components/FAQ";
 import { useRouter } from "next/router";
+import { useSnackbar } from 'notistack';
+
 
 export default function detailPage({ result }) {
   const [result1, setResult1] = useState([]);
@@ -29,6 +31,8 @@ export default function detailPage({ result }) {
   const { id } = useSelector((state) => state.ecom);
   const dispatch = useDispatch();
   const router=useRouter();
+  const { enqueueSnackbar } = useSnackbar();
+  
 
   useEffect(() => {
     id?.includes(Number(localStorage.getItem('pid')))?setButtonTxt('Added to cart'):setButtonTxt('Add to cart');
@@ -55,16 +59,32 @@ export default function detailPage({ result }) {
         count:1
       })
     );
+    enqueueSnackbar('This item has been added to your cart.', {
+      variant: 'success', 
+      anchorOrigin: {
+        vertical: 'bottom',
+        horizontal: 'center',
+      },
+      autoHideDuration: 3000,
+    });
     setButtonTxt('Added to cart');
    
   }else{
-    alert('already in cart')
+    enqueueSnackbar('This item is already in your cart.', {
+      variant: 'info', 
+      anchorOrigin: {
+        vertical: 'bottom',
+        horizontal: 'center',
+      },
+      autoHideDuration: 3000,
+    });
   }
   };
   return (
     <div>
       <Navbar />
       <div className="detailPage">
+
         <Grid container className="lg:px-28 px-6 sm:px-10 md:px-24" spacing={2}>
           <Grid
             item
@@ -157,6 +177,9 @@ export default function detailPage({ result }) {
               </Typography>
             </Box>
             <Box>
+              <Typography variant="p" className="text-red-600 text-xl">$ {result.price}</Typography>
+            </Box>
+            <Box>
               <Typography variant="p" color="Primary">
                 Available offers
               </Typography>
@@ -190,7 +213,7 @@ export default function detailPage({ result }) {
               />
             </Box>
             <Box>
-              <Typography variant="p">$: {result.price}</Typography>
+              <Typography variant="p" className="text-red-600 text-xl">$ {result.price}</Typography>
             </Box>
             <Box className="mt-5">
               <Typography variant="p">
