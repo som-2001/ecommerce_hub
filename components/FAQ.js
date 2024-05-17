@@ -24,6 +24,7 @@ export default function FAQ() {
         sx={{
           '& .MuiAccordion-region': { height: expanded ? 'auto' : 0 },
           '& .MuiAccordionDetails-root': { display: expanded ? 'block' : 'none' },
+          marginBottom:"5px"
         }}
       >
         <AccordionSummary
@@ -39,7 +40,7 @@ export default function FAQ() {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion>
+      <Accordion sx={{ marginBottom:"5px"}}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon className='text-purple-700' />}
           aria-controls="panel3-content"

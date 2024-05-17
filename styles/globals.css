@@ -29,6 +29,10 @@ html{
   color: white;
   background-color:rgb(130 36 211);
 }
+#button_background{
+  background-color: whitesmoke;
+  color: rgb(130 36 211);
+}
 
 *{
   ::-webkit-scrollbar{

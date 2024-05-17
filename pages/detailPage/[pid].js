@@ -109,7 +109,7 @@ export default function detailPage({ result }) {
             <Box style={{ textAlign: "-webkit-center" }}>
               
               <Button
-                id={buttonTxt!=='Added to cart' ? 'button':''}
+                id={buttonTxt!=='Added to cart' ? 'button':'button_background'}
                 variant="contained"
                 style={{
                   marginTop: "15px",
